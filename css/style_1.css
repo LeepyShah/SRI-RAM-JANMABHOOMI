@@ -1,0 +1,594 @@
+:root {
+    --orange: rgb(237, 175, 5);
+    --color-default: #212529;
+    --color-primary: #ce1212;
+    --color-secondary: #37373f;
+    --background-color-rgb: 255, 255, 255;
+    --default-color: #212529;
+    --default-color-rgb: 33, 37, 41;
+    --accent-color: #e84545;
+    --accent-color-rgb: 232, 69, 69;
+    --heading-color: #32353a;
+    --heading-color-rgb: 50, 53, 58;
+    --contrast-color: #ffffff;
+    --contrast-color-rgb: 255, 255, 255;
+
+
+    --bright-yellow-crayola: hsl(36, 94%, 57%);
+    --portland-orange: hsl(15, 84%, 57%);
+    --battleship-gray: hsl(0, 0%, 53%);
+    --silver-chalice: hsl(0, 0%, 70%);
+    --spanish-gray: hsl(0, 0%, 60%);
+    --sonic-silver: hsl(208, 7%, 46%);
+    --raisin-black: hsl(228, 6%, 17%);
+    --eerie-black: hsl(210, 3%, 13%);
+    --bittersweet: hsl(9, 96%, 69%);
+    --light-gray: hsl(0, 0%, 80%);
+    --platinum: hsl(0, 0%, 91%);
+    --amber: hsl(45, 100%, 51%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --onyx: hsl(220, 2%, 24%);
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+/*======================================= HEADER STARTS ===================================*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(255, 253, 253);
+    padding: 1rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem rgb(246, 156, 60);
+}
+
+header .navbar a {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    color: rgb(54, 53, 53);
+    text-decoration: none;
+
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+    font-weight: 500;
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bar {
+    font-size: 2rem;
+    color: #161414;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: 3px solid rgb(14, 12, 12);
+    display: none;
+
+}
+/* Adjust the size of the logo */
+header .navbar-brand img {
+    height: 70px;
+    width: auto;
+}
+
+/* Media queries */
+header .fas.fa-bars {
+
+    display: none;
+}
+
+/*======================================= FULL SCREEN VIDEO ===================================*/
+
+.full-screen-video-container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.full-screen-video-container video {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.full-screen-video-container video {
+    width: auto;
+    height: medium;
+    display: flex;
+    margin-top: 5%;
+    position: relative;
+    /* Set position to relative for absolute positioning of video*/
+    overflow: hidden;
+    /* Hide overflow to prevent scrollbars */
+    width: 100%;
+    /* Set width to fill the container */
+    height: auto;
+    /* Set height to auto to maintain aspect ratio */
+
+}
+/* ======================================DISCOVER BUTTON======================================= */
+.info button a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.info button a:hover {
+    text-decoration: none;
+    color: var(--orange)
+}
+
+.info button:hover {
+
+
+    font-weight: bolder;
+}
+/* ============================================PROGRESS BAR */
+.progress {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.progress:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.progress .progress-left {
+    left: 0;
+}
+
+.progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 5px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress .progress-right {
+    right: 0;
+}
+
+.progress .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+
+.progress .inner-circle,
+.progress .progress-value {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px solid #8e8e8e;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.progress .inner-circle:after {
+    content: "";
+    width: 5px;
+    height: 60px;
+    background: #8e8e8e;
+    margin: 0 auto;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transition: all 10s linear 0s;
+}
+.progress.yellow .progress-bar {
+    border-color: #fdba04;
+}
+
+.progress.yellow .progress-value {
+    color: #fdba04;
+}
+
+.progress.yellow .progress-left .progress-bar {
+    animation: loading-3 1s linear forwards 2s;
+}
+
+.progress.yellow .inner-circle {
+    animation: loading-7 3.8s ease forwards;
+}
+
+@keyframes loading-1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes loading-3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes loading-7 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+@media only screen and (max-width: 990px) {
+    .progress {
+        margin-bottom: 20px;
+    }
+}
+
+/* =============================MEDIA QUARIES========================= */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 1rem;
+
+    }
+
+    header .navbar a {
+        padding-right: 2%;
+    }
+
+    header .fas.fa-bars {
+
+        display: block;
+    }
+
+}
+
+@media (max-width: 768px) {
+    header .fa-bars {
+        font-size: 2.5rem;
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: inline;
+        background: #eb8511;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        ;
+    }
+
+    header .navbar a {
+        margin: 2rem;
+        padding: 1rem;
+        background: #ffffff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+        color: black;
+        font-size: small;
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .full-screen-video-container video {
+        margin-top: 10%;
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    header {
+        padding: 0.2rem;
+    }
+
+    header .navbar-brand {
+        width: 20%;
+        height: 20%;
+    }
+
+    header a img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ========================================CARD=================================== */
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the opacity as needed */
+    color: white;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .container {
+    opacity: 1;
+    /* Show on hover */
+}
+
+.card .container h1 {
+    margin: 0;
+}
+
+/* ------Tourisum----------- */
+/* ================================MAP============================== */
+.map .by-air,
+.by-train,
+.by-road {
+    background-color: #dee2e6;
+    margin: 10px;
+    border-radius: 0.4375rem;
+
+}
+
+.map span {
+    color: hsl(15, 84%, 57%);
+}
+
+.map .map-frame {
+    border-radius: 5px;
+}
+
+.map .map-title {
+    text-align: center;
+    color: lightcoral;
+}
+
+@media only screen and (max-width:720px) {
+    .map .map-frame {
+        height: 22.125rem;
+        width: 22.125rem;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+#t1 {
+
+    background-attachment: absolute;
+    background-color: rgb(248, 211, 238);
+    height: 200px;
+    width: 100%;
+    border: 3px solid rgb(92, 11, 11);
+}
+
+#t1 h1 {
+    padding-top: 7rem;
+    text-shadow: #161414;
+    text-align: center;
+    font-size: 50px;
+}
+
+#t1 p {
+    font-size: larger;
+    text-align: center;
+}
+
+/* ======================FOOTER======================== */
+footer {
+    background-color: #161414;
+    color: aliceblue;
+    padding: 2rem;
+    margin-top: 10%;
+    box-shadow: 0px -5px 10px orange;
+}
+
+footer a.text-body {
+    color: orange !important;
+}
+
+footer .container a {
+
+    color: aliceblue !important;
+
+}
+
+footer .mb-4 a:hover {
+
+    color: rgb(248, 139, 14) !important;
+}
+
+/* ===============================OurSouvenir======================== */
+.section-title {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title h2:before,
+.section-title h2:after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: var(--accent-color);
+    display: inline-block;
+}
+
+.section-title h2:before {
+    margin: 0 15px 10px 0;
+}
+
+.section-title h2:after {
+    margin: 0 0 10px 15px;
+}
+
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+
+/* user feedback */
+.container #feedback {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+.form-container {
+    width: 50%;
+}
+.form-container form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.form-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.form-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.error {
+    color: red;
+}
+.thank-you {
+    color: green;
+    font-weight: bold;
+}

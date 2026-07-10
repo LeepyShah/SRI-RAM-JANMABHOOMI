@@ -393,9 +393,10 @@ input[type="submit"] {
    ========================================================= */
 .status-section {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto minmax(auto, 650px) auto;
+    justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
     padding: 4.5rem 5%;
     background: var(--panel);
 }
